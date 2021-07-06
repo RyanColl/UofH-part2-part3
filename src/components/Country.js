@@ -1,7 +1,8 @@
 import Show from "./Show"
+import Weather from "./Weather"
 const Country = (props) => {
     if(props.data) return(
-        <div>{console.log(props.data)}
+        <div>
             <h1>{props.data.name}</h1>
             <p>Capital: {props.data.capital} </p>
             <p>Population: {props.data.population}</p>
@@ -16,6 +17,7 @@ const Country = (props) => {
                     })}
             </ul>
             <img src={props.data.flag} width='150' height='150'  />
+            <Weather city={props.data.capital}/>
         </div>
     )   
     else return (
