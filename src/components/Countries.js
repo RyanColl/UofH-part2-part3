@@ -14,7 +14,7 @@ const Countries = (props) => {
                 { 
                     props.data.map((country, i) => {
                     if(country.name.indexOf(props.filter) > -1) return(
-                        <Country key={i} name={country.name} filter={props.filter} />
+                        <Country key={i} name={country.name} filter={props.filter} filterhandler={props.filterhandler}/>
                     )
                 })}
              </ul>

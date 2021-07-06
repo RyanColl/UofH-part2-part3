@@ -47,6 +47,7 @@ const App = () => {
   const filterInput = (e) => {
     setFilter(e.target.value)
   }
+  const setFilterState = (str) => setFilter(str)
   // we use useEffect() to let React know we are making async calls 
   // when the promise is complete, we place the information, response.data, into our notes state variable
   // There are many possible use cases for an effect hook other than fetching data from the server. However, this use is sufficient for us, for now.
@@ -66,7 +67,7 @@ const App = () => {
   return(
     <div>
       <p>Search for countries: <input value={filter} onChange={filterInput}></input></p>
-      <Countries data={countries} filter={filter}/>
+      <Countries data={countries} filter={filter} filterhandler={setFilterState}/>
     </div>
   )
 }

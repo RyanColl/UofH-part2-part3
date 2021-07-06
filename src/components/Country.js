@@ -1,4 +1,4 @@
-
+import Show from "./Show"
 const Country = (props) => {
     if(props.data) return(
         <div>{console.log(props.data)}
@@ -19,9 +19,7 @@ const Country = (props) => {
         </div>
     )   
     else return (
-        <li>
-            {props.name}
-        </li>
+        <Show data={props} filter={props.filter} filterhandler={props.filterhandler}/>  
     )
 }
 export default Country
